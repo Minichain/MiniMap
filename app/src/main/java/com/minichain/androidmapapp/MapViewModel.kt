@@ -15,6 +15,10 @@ class MapViewModel : ViewModel() {
   val fireSpots = fireSpotsFlow.asStateFlow()
 
   init {
+    updateFireSpots()
+  }
+
+  private fun updateFireSpots() {
     val httpClient = HttpClient(Android)
     viewModelScope.launch {
       val fireSpots = mutableListOf<FireSpot>()
