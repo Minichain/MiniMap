@@ -1,5 +1,4 @@
 [versions]
-activity-compose = "1.9.2"
 agp = "8.2.2"
 kotlin = "1.9.0"
 
@@ -8,6 +7,7 @@ android-sdk-target = "34"
 
 compose-bom = "2024.09.03"
 compose-google-maps = "4.3.0"
+compose-activity = "1.9.2"
 ktor-client-version = "1.6.4"
 
 [libraries]
@@ -19,7 +19,7 @@ compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling
 compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-google-maps = { module = "com.google.maps.android:maps-compose", version.ref = "compose-google-maps" }
-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
 
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor-client-version" }
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor-client-version" }
