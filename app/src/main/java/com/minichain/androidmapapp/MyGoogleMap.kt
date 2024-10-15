@@ -20,7 +20,7 @@ import com.google.maps.android.compose.MarkerComposable
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 
-private val initialZoom = 14f
+private const val initialZoom = 14f
 private val barcelonaCoordinates = LatLng(41.3874, 2.1686)
 
 @Composable
@@ -57,6 +57,6 @@ fun FireSpotMaker() {
     imageVector = Icons.Filled.LocalFireDepartment,
     modifier = Modifier.size(32.dp),
     tint = Color.Red,
-    contentDescription = "Fire spot mark"
+    contentDescription = null
   )
 }
