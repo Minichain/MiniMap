@@ -15,6 +15,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapUiSettings
 import com.google.maps.android.compose.MarkerComposable
 import com.google.maps.android.compose.MarkerState
@@ -37,6 +38,7 @@ fun MyGoogleMap() {
     GoogleMap(
       modifier = Modifier.fillMaxSize(),
       cameraPositionState = cameraPositionState,
+      properties = myGoogleMapProperties(),
       content = {
         fireSpots?.forEach { fireSpot ->
           MarkerComposable(
@@ -52,7 +54,13 @@ fun MyGoogleMap() {
 }
 
 @Composable
-fun FireSpotMaker() {
+private fun myGoogleMapProperties() =
+  MapProperties(
+    isMyLocationEnabled = true
+  )
+
+@Composable
+private fun FireSpotMaker() {
   Icon(
     imageVector = Icons.Filled.LocalFireDepartment,
     modifier = Modifier.size(32.dp),

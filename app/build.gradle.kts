@@ -24,6 +24,7 @@ android {
     val properties = Properties()
     properties.load(project.rootProject.file("local.properties").inputStream())
     buildConfigField("String", "FIRMS_API_KEY", "\"${properties.getProperty("FIRMS_API_KEY")}\"")
+    manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = properties.getProperty("GOOGLE_MAPS_API_KEY")
   }
 
   buildTypes {
