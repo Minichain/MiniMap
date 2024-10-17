@@ -61,6 +61,7 @@ dependencies {
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
   implementation(libs.compose.activity)
 
+  implementation(platform(libs.compose.bom))
   implementation(libs.compose.ui)
   implementation(libs.compose.ui.graphics)
   implementation(libs.compose.ui.tooling)
