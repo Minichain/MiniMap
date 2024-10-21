@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.serialization.gson.gson
+import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -14,7 +14,7 @@ class MapViewModel : ViewModel() {
 
   private val httpClient = HttpClient(Android) {
     install(ContentNegotiation) {
-      gson()
+      json()
     }
   }
 

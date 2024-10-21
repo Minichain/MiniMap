@@ -76,9 +76,7 @@ dependencies {
   implementation(libs.ktor.client.json)
   implementation(libs.ktor.client.serialization)
   implementation(libs.ktor.client.content.negotiation)
-  implementation(libs.ktor.serialization.gson)
-
-  implementation(libs.gson)
+  implementation(libs.ktor.serialization.kotlinx.json)
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 }
