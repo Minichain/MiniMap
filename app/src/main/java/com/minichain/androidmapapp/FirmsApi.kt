@@ -12,8 +12,8 @@ object FirmsApi {
 
   suspend fun getFireSpots(httpClient: HttpClient): List<FireSpot> {
     val apiUrl = "https://firms.modaps.eosdis.nasa.gov/api/area/csv/$apiKey/${Source.MODIS_NRT.string}/$europeCoordinates/$dayRange"
-    println("AndroidMapAppLog: FIRMS API URL: $apiUrl")
     val fireSpots = mutableListOf<FireSpot>()
+    println("AndroidMapAppLog: sending GET request...")
     val response = httpClient.get(apiUrl)
     when (response.status.value) {
       in 200..299 -> {

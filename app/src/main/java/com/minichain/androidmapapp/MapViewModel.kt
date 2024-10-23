@@ -21,6 +21,9 @@ class MapViewModel : ViewModel() {
   private val fireSpotsFlow = MutableStateFlow<List<FireSpot>?>(null)
   val fireSpots = fireSpotsFlow.asStateFlow()
 
+  private val weatherDataFlow = MutableStateFlow<WeatherData?>(null)
+  val weatherData = weatherDataFlow.asStateFlow()
+
   init {
     updateFireSpots()
     updatePointForecast()
@@ -34,7 +37,7 @@ class MapViewModel : ViewModel() {
 
   private fun updatePointForecast() {
     viewModelScope.launch {
-      WindyPointForecastApi.getData(httpClient)
+      weatherDataFlow.emit(WindyPointForecastApi.getData(httpClient))
     }
   }
 }
