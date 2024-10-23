@@ -24,6 +24,7 @@ android {
     val properties = Properties()
     properties.load(project.rootProject.file("local.properties").inputStream())
     buildConfigField("String", "FIRMS_API_KEY", "\"${properties.getProperty("FIRMS_API_KEY")}\"")
+    buildConfigField("String", "WINDY_POINT_FORECAST_API_KEY", "\"${properties.getProperty("WINDY_POINT_FORECAST_API_KEY")}\"")
     manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = properties.getProperty("GOOGLE_MAPS_API_KEY")
   }
 
@@ -74,6 +75,8 @@ dependencies {
   implementation(libs.ktor.client.android)
   implementation(libs.ktor.client.json)
   implementation(libs.ktor.client.serialization)
+  implementation(libs.ktor.client.content.negotiation)
+  implementation(libs.ktor.serialization.kotlinx.json)
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 }
