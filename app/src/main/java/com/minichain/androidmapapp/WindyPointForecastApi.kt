@@ -6,12 +6,10 @@ import io.ktor.client.call.body
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.client.request.url
-import io.ktor.client.statement.request
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.jsonArray
 
 object WindyPointForecastApi {
 
@@ -62,7 +60,6 @@ object WindyPointForecastApi {
           println("AndroidMapAppLog: Failed response! value: ${response.status.value}")
         }
       }
-      response.request.content
     }
     return weatherData
   }

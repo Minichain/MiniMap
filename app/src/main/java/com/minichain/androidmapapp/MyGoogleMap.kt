@@ -32,8 +32,9 @@ private const val initialZoom = 14f
 private val barcelonaCoordinates = LatLng(41.3874, 2.1686)
 
 @Composable
-fun MyGoogleMap() {
-  val viewModel = MapViewModel()
+fun MyGoogleMap(
+  viewModel: MapViewModel
+) {
   val initialZoom = initialZoom
   val initialCoordinates = barcelonaCoordinates
   val cameraPositionState = rememberCameraPositionState {
@@ -79,13 +80,13 @@ private fun WeatherData(
     modifier = modifier
   ) {
     Row {
-      Text("Wind:")
-      Text("${weatherData.windOnSurface}")
+      Text("Wind: ")
+      Text("(${String.format("%.2f", weatherData.windOnSurface.first)}, ${String.format("%.2f", weatherData.windOnSurface.second)})")
       Text("m/s")
     }
     Row {
-      Text("Temperature:")
-      Text("${weatherData.temperatureOnSurface}")
+      Text("Temperature: ")
+      Text("${String.format("%.2f", weatherData.temperatureOnSurface)}")
       Text("ºK")
     }
   }
